@@ -1,0 +1,19 @@
+Description="Todo"
+
+Keywords={
+  { Id=1,
+    Regex=[[.*:$]],           -- catching lines ending with ':'
+  },
+  { Id=2,
+    Regex=[[^\[\s..*$]],      -- catching lines beginning with '[ ]'
+  },
+  { Id=3,
+    Regex=[[^\[X..*$]],       -- catching lines beginning with '[X]'
+  },
+  { Id=4,
+    Regex=[[^\[-..*$]],       -- catching lines beginning with '[-]'
+  }
+}
+
+IgnoreCase=false
+EnableIndentation=true

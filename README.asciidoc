@@ -1,0 +1,26 @@
+todo-highlight
+==============
+
+A minimalistic CLI highlight syntax file for plain text TODO files.
+
+It is all very easy:
+
+1 - Install link:http://www.andre-simon.de/doku/highlight/en/highlight.php[the highlight package] if it is not already in you system. (on OSX you can get it with brew install highlight)
+
+2 - Copy the file todo.lang in the highlight's language definitions
+[source,shell]
+----
+cp todo.lang /usr/local/share/highlight/langDefs/
+----
+
+3 - You will then have color highlight when displaying TODOs with `highlight ./TODO -O xterm256` or from stdin with `cat TODO | highlight --syntax TODO -O xterm256`
+[[app-listing]]
+[source,shell]
+----
+# if you want visualize all TODO within this dir with colored highlighting
+find . -name "TODO" | tail | highlight -O xterm256
+# if you want to save this command as 'todo_view'
+echo 'alias todo_view="find . -name TODO | xargs tail | highlight --syntax TODO -O xterm256"' >> ~/.bash_profile
+----
+
+
